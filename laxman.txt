@@ -1,10 +1,1 @@
-<<<<<<< HEAD
-hhhaaaaaaaaaaaaaaaaaaaaa
-=======
-
-Changed by satheesh
-modified by laxman
-added a new line by Tapanesh 
-Satheesh Changed again
-aaaaaaaaaaaaaaaaaaaaaaaaa
->>>>>>> 412a04c3b3efd80a9234eda399747959db4a3c38
+jjkkkkkkkkklllllllljjjj
