@@ -1,8 +1,11 @@
 package com.ibs.hotels.form;
 
+//import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+/*import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;*/
 
 public class SearchMenu {
 	/*@InitBinder
@@ -68,5 +71,6 @@ public class SearchMenu {
 		
 		return "location="+location+",checkIn="+checkIn+",checkOut="+checkOut+"Number of Rooms="+noOfRooms;
 	}
+	
 
 }

@@ -6,7 +6,10 @@
 </p>
 <form:form method="post" action="find.html" commandName="newSearch">
 <form:errors path="*" cssClass="errorblock" element="div" />
-
+<!-- <view-state id="searchResults" model="SearchMenu">
+    <transition on="proceed" to="header">
+</view-state> -->
+		
 	<table>
 		<tr>
 			<td><form:label path="location">

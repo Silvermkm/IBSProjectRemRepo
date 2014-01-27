@@ -7,7 +7,9 @@
 
 package com.ibs.hotels.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,8 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -35,9 +39,17 @@ public class SearchController {
 	@Autowired
 	private SearchMenuValidator searchValidator;
 
-	@InitBinder
+	/*@InitBinder
 	private void initBinder(WebDataBinder binder) {
 		binder.setValidator(searchValidator);
+	}*/
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+	    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	   // sdf.setLenient(true);
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+	    binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+	    binder.setValidator(searchValidator);
 	}
 
 	@Autowired
@@ -64,7 +76,7 @@ public class SearchController {
 					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms());
 			//map.put("newSearch", new SearchMenu());
 			map.put("newSearch", srch);
-			map.put("hotelList", htlLst);
+			map.put("hotelList", htlLst); 
 
 			return new ModelAndView("searchResult", map);
 		}
