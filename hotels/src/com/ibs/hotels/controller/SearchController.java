@@ -8,6 +8,7 @@
 package com.ibs.hotels.controller;
 
 import java.text.SimpleDateFormat;
+import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -35,6 +36,7 @@ import com.ibs.hotels.service.SearchService;
 
 @Controller
 public class SearchController {
+	protected static Logger logger = Logger.getLogger("controller");
 
 	@Autowired
 	private SearchMenuValidator searchValidator;
@@ -60,6 +62,21 @@ public class SearchController {
 
 		return new ModelAndView("searchHome", "newSearch", new SearchMenu());
 	}
+	@ModelAttribute("currencies")
+	 public List<String> getAllCurrencies() {
+	  logger.debug("Retrieving all currencies and adding it to ModelAttribute");
+	   
+	  // Prepare data
+	  List<String> currencies = new ArrayList<String>();
+	  currencies.add("Dollar");
+	  
+	  currencies.add("Euro");
+	  /*currencies.add("Dinar");
+	  currencies.add("Yen");
+	  currencies.add("Pound");*/
+	   
+	  return currencies;
+	 }
 
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
 	public ModelAndView listHotels(
@@ -73,10 +90,11 @@ public class SearchController {
 			Map<String, Object> map = new HashMap<String, Object>();
 			System.out.println(srch);
 			htlLst = searchService.listHotels(srch.getLocation(),
-					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms());
+					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms(),srch.getCurrency());
 			//map.put("newSearch", new SearchMenu());
 			map.put("newSearch", srch);
-			map.put("hotelList", htlLst); 
+			map.put("hotelList", htlLst);
+			map.put("currencies",srch.getCurrency());
 
 			return new ModelAndView("searchResult", map);
 		}

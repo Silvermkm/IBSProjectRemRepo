@@ -40,6 +40,10 @@
 			<td><form:errors path="noOfRooms" cssClass="error" />
 		</tr>
 		<tr>
+   <td><form:label path="currency">Currency:</form:label></td>
+   <td><form:select path="currency"  items="${currencies}"/></td>
+  </tr>
+		<tr>
         <td colspan="2">
             <input type="submit" value="<spring:message code="label.search"/>"/>
         </td>

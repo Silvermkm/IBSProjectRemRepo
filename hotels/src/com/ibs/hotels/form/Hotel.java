@@ -3,6 +3,7 @@ import java.math.BigDecimal;
 public class Hotel {
 private String hotelName;
 private String hotelAddress;
+
 private BigDecimal roomRent;
 public String getHotelName() {
 	return hotelName;
