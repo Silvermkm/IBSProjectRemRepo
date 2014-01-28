@@ -18,6 +18,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -37,6 +38,11 @@ public class SearchController {
 
 	@Autowired
 	private SearchMenuValidator searchValidator;
+	
+	private ConversionService conversionService;
+	
+	/*private FormattingConversionServiceFactoryBean conversionService;*/
+
 
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
@@ -44,6 +50,7 @@ public class SearchController {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(
 				dateFormat, true));
 		binder.setValidator(searchValidator);
+		binder.setConversionService(conversionService);
 	}
 
 	@Autowired
