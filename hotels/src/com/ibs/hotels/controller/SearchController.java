@@ -68,7 +68,7 @@ public class SearchController {
 	   
 	  // Prepare data
 	  List<String> currencies = new ArrayList<String>();
-	  currencies.add("Dollar");
+	  currencies.add("USD");
 	  
 	  currencies.add("Euro");
 	  /*currencies.add("Dinar");

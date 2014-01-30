@@ -5,21 +5,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import com.ibs.hotels.form.*;
-
-import org.apache.catalina.connector.Request;
 import org.springframework.stereotype.Repository;
-
-//import com.ibs.hotels.form.SearchMenu;
-
 @Repository("searchDAO")
 public class SearchDAOImpl implements SearchDAO{
-	//private SearchMenu srcMenu;
-	
 	public List<Hotel> listHotels(String location,Date checkIn,Date checkOut, int noOfRoom ,List<String> currency ){
 		List<Hotel> htlLst = new ArrayList<Hotel>();
 		System.out.println("currency="+currency);
-		//String currency1="Dollar";
-		if(currency.equals("Dollar"))
+		if(currency.equals("USD"))
 		{
 			htlLst.add(new Hotel("Taj", "Mumbai", new BigDecimal(15000/61)));
 			htlLst.add(new Hotel("Marriot", "Mumbai",  new BigDecimal(8000/61)));
@@ -33,8 +25,6 @@ public class SearchDAOImpl implements SearchDAO{
 			htlLst.add(new Hotel("Paradise", "Mumbai",  new BigDecimal(7000/80)));
 			htlLst.add(new Hotel("DTDC", "Mumbai",  new BigDecimal(6000/80)));
 		}
-		
-		
 		return htlLst;
 	}
 
