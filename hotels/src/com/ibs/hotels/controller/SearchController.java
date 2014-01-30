@@ -70,5 +70,8 @@ public class SearchController {
 	public void test(){
 		
 	}
+	public void test1(){
+		
+	}
 
 }
