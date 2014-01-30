@@ -6,7 +6,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import com.ibs.hotels.json.HotelListRespons;
+import com.ibs.hotels.json.HotelListResponse;
 
 public class RESTClient {
 
@@ -35,7 +35,7 @@ public class RESTClient {
 		restTemplate.setMessageConverters(messageConverters);
 		 
 		//A simple GET request, the response will be mapped to Example.class
-		HotelListRespons result = restTemplate.getForObject(url, HotelListRespons.class);
+		HotelListResponse result = restTemplate.getForObject(url, HotelListResponse.class);
 		
 		System.out.println(result);
 		 

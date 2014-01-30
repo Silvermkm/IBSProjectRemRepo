@@ -1,10 +1,13 @@
 package com.ibs.hotels.json;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "ValueAdd")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ValueAdd {
 	@XmlAttribute(name = "id")
 	String id;
