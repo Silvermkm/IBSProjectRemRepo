@@ -66,5 +66,9 @@ public class SearchController {
 	public void setSearchService(SearchService searchService) {
 		this.searchService = searchService;
 	}
+	
+	public void test(){
+		
+	}
 
 }
