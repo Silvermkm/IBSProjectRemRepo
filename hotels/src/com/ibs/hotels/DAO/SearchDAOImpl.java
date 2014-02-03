@@ -12,6 +12,7 @@ public class SearchDAOImpl implements SearchDAO{
 			int noOfRoom, List<String> currency ){
 		List<Hotel> htlLst = new ArrayList<Hotel>();
 		System.out.println("currency="+currency);
+		
 		if(currency.equals("USD"))
 		{
 			htlLst.add(new Hotel("Taj", "Mumbai", new BigDecimal(15000/61)));
