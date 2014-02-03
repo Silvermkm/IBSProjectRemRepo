@@ -1,10 +1,3 @@
-/*
- * @author Satheesh.C.K
- * @project hotels
- * Date Created:22 Jan 2014
- * 
- * */
-
 package com.ibs.hotels.controller;
 
 import java.text.SimpleDateFormat;
@@ -41,17 +34,12 @@ public class SearchController {
 	@Autowired
 	private SearchMenuValidator searchValidator;
 
-	/*@InitBinder
-	private void initBinder(WebDataBinder binder) {
-		binder.setValidator(searchValidator);
-	}*/
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-	    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-	   // sdf.setLenient(true);
-	    binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
-	    binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-	    binder.setValidator(searchValidator);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+		binder.setValidator(searchValidator);
 	}
 
 	@Autowired
@@ -62,27 +50,25 @@ public class SearchController {
 
 		return new ModelAndView("searchHome", "newSearch", new SearchMenu());
 	}
+
 	@ModelAttribute("currencies")
-	 public List<String> getAllCurrencies() {
-	  logger.debug("Retrieving all currencies and adding it to ModelAttribute");
-	   
-	  // Prepare data
-	  List<String> currencies = new ArrayList<String>();
-	  currencies.add("USD");
-	  
-	  currencies.add("Euro");
-	  /*currencies.add("Dinar");
-	  currencies.add("Yen");
-	  currencies.add("Pound");*/
-	   
-	  return currencies;
-	 }
+	public List<String> getAllCurrencies() {
+		logger.debug("Retrieving all currencies and adding it to ModelAttribute");
+
+		// Prepare data
+		List<String> currencies = new ArrayList<String>();
+		currencies.add("USD");
+
+		currencies.add("Euro");
+
+		return currencies;
+	}
 
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
 	public ModelAndView listHotels(
 			@ModelAttribute("newSearch") @Valid SearchMenu srch,
 			BindingResult result) {
-		// SearchMenu srch = (SearchMenu) model;
+
 		if (result.hasErrors()) {
 			return new ModelAndView("searchHome", "newSearch", srch);
 		} else {
@@ -90,11 +76,12 @@ public class SearchController {
 			Map<String, Object> map = new HashMap<String, Object>();
 			System.out.println(srch);
 			htlLst = searchService.listHotels(srch.getLocation(),
-					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms(),srch.getCurrency());
-			//map.put("newSearch", new SearchMenu());
+					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms(),
+					srch.getCurrency());
+
 			map.put("newSearch", srch);
 			map.put("hotelList", htlLst);
-			map.put("currencies",srch.getCurrency());
+			map.put("currencies", srch.getCurrency());
 
 			return new ModelAndView("searchResult", map);
 		}

@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
-<link  rel="stylesheet" href="<spring:theme code='css'/>" type="text/css" />
+<link rel="stylesheet" href="<spring:theme code='css'/>" type="text/css" />
 <style>
 .error {
 	color: #ff0000;
 }
- 
+
 .errorblock {
 	color: #000;
 	background-color: #ffEEEE;
@@ -21,19 +21,19 @@
 </style>
 </head>
 <body>
-<table border="1" cellpadding="2" cellspacing="2" align="center">
-    <tr>
-        <td height="30" colspan="2"><tiles:insertAttribute name="header" />
-        </td>
-    </tr>
-    <tr>
-        <td height="250"><tiles:insertAttribute name="menu" /></td>
-        <td width="350"><tiles:insertAttribute name="body" /></td>
-    </tr>
-    <tr>
-        <td height="30" colspan="2"><tiles:insertAttribute name="footer" />
-        </td>
-    </tr>
-</table>
+	<table border="1" cellpadding="2" cellspacing="2" align="center">
+		<tr>
+			<td height="30" colspan="2"><tiles:insertAttribute name="header" />
+			</td>
+		</tr>
+		<tr>
+			<td height="250"><tiles:insertAttribute name="menu" /></td>
+			<td width="350"><tiles:insertAttribute name="body" /></td>
+		</tr>
+		<tr>
+			<td height="30" colspan="2"><tiles:insertAttribute name="footer" />
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

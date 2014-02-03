@@ -18,7 +18,7 @@
 					<th><spring:message code="label.hotelName" /></th>
 					<th><spring:message code="label.hotelAddress" /></th>
 					<th><spring:message code="label.hotelRent" /></th>
-					<th>&nbsp;</th>
+					<th>&nbsp;</th>   
 				</tr>
 				<c:forEach items="${hotelList}" var="hotel">
 					<tr>
@@ -27,7 +27,7 @@
 						<td>${hotel.roomRent}</td>
 					</tr>
 				</c:forEach>
-				
+
 			</table>
 		</c:if>
 

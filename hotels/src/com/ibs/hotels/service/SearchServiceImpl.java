@@ -9,24 +9,22 @@ import org.springframework.stereotype.Service;
 import com.ibs.hotels.DAO.SearchDAO;
 import com.ibs.hotels.form.Hotel;
 
-
-
-
 @Service("searchService")
-public class SearchServiceImpl implements SearchService{
-	
+public class SearchServiceImpl implements SearchService {
+
 	@Autowired
 	private SearchDAO searchDAO;
-	
+
 	public void setSearchDAO(SearchDAO searchDAO) {
 		this.searchDAO = searchDAO;
 	}
 
-	public List<Hotel> listHotels(String location,Date checkIn,Date checkOut, int noOfRoom,List<String> currency ){
-		
-		
-		return  searchDAO.listHotels(location,checkIn,checkOut,noOfRoom,currency);
-		
+	public List<Hotel> listHotels(String location, Date checkIn, Date checkOut,
+			int noOfRoom, List<String> currency) {
+
+		return searchDAO.listHotels(location, checkIn, checkOut, noOfRoom,
+				currency);
+
 	}
 
 }

@@ -5,11 +5,11 @@
 	<spring:message code="label.menu" />
 </p>
 <form:form method="post" action="find.html" commandName="newSearch">
-<form:errors path="*" cssClass="errorblock" element="div" />
-<!-- <view-state id="searchResults" model="SearchMenu">
+	<form:errors path="*" cssClass="errorblock" element="div" />
+	<!-- <view-state id="searchResults" model="SearchMenu">
     <transition on="proceed" to="header">
 </view-state> -->
-		
+
 	<table>
 		<tr>
 			<td><form:label path="location">
@@ -40,12 +40,11 @@
 			<td><form:errors path="noOfRooms" cssClass="error" />
 		</tr>
 		<tr>
-   <td><form:label path="currency">Currency:</form:label></td>
-   <td><form:select path="currency"  items="${currencies}"/></td>
-  </tr>
+			<td><form:label path="currency">Currency:</form:label></td>
+			<td><form:select path="currency" items="${currencies}" /></td>
+		</tr>
 		<tr>
-        <td colspan="2">
-            <input type="submit" value="<spring:message code="label.search"/>"/>
-        </td>
+			<td colspan="2"><input type="submit"
+				value="<spring:message code="label.search"/>" /></td>
 	</table>
 </form:form>

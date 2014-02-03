@@ -8,7 +8,8 @@ import com.ibs.hotels.form.*;
 import org.springframework.stereotype.Repository;
 @Repository("searchDAO")
 public class SearchDAOImpl implements SearchDAO{
-	public List<Hotel> listHotels(String location,Date checkIn,Date checkOut, int noOfRoom ,List<String> currency ){
+	public List<Hotel> listHotels(String location, Date checkIn, Date checkOut,
+			int noOfRoom, List<String> currency ){
 		List<Hotel> htlLst = new ArrayList<Hotel>();
 		System.out.println("currency="+currency);
 		if(currency.equals("USD"))
