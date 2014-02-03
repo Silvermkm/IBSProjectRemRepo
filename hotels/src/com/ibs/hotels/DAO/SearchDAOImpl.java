@@ -41,18 +41,20 @@ public class SearchDAOImpl implements SearchDAO{
 		//A simple GET request, the response will be mapped to Example.class
 		
 		Object response = restTemplate.getForObject(url, Object.class);
+		/*HotelListResponse resp1 = (HotelListResponse)response;*/
+		
 		System.out.println(response);
 		System.out.println("Satheesh");
 		//HotelListRespons result = restTemplate.getForObject(url, HotelListRespons.class);
-		LinkedHashMap<String,HotelListResponse> javaResp =(LinkedHashMap<String,HotelListResponse>)response;
-		//HotelListResponse value = null;
-		for (Map.Entry<String, HotelListResponse> entry : javaResp.entrySet()) {
-		    String key = entry.getKey();
-		    Object value = entry.getValue();
-		    System.out.println(value);
-		}
-		
-		MapJson respMapJson = restTemplate.getForObject(url, MapJson.class);
+//		LinkedHashMap<String,HotelListResponse> javaResp =(LinkedHashMap<String,HotelListResponse>)response;
+//		//HotelListResponse value = null;
+//		for (Map.Entry<String, HotelListResponse> entry : javaResp.entrySet()) {
+//		    String key = entry.getKey();
+//		    Object value = entry.getValue();
+//		    System.out.println(value);
+//		}
+//		
+//		MapJson respMapJson = restTemplate.getForObject(url, MapJson.class);
 		
 		//System.out.println(result);
 		/**************Rest Testing End**********************/
