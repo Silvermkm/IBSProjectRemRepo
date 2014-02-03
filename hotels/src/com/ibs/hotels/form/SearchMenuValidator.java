@@ -14,15 +14,22 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+<<<<<<< HEAD
 /*import org.springframework.binding.message.MessageBuilder;
  import org.springframework.binding.validation.ValidationContext;*/
 
 //import com.sun.org.apache.xerces.internal.impl.dv.ValidationContext;
 @Component
+=======
+>>>>>>> origin/sckbranch
 public class SearchMenuValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> cls) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/sckbranch
 		return SearchMenu.class.isAssignableFrom(cls);
 	}
 
@@ -31,8 +38,6 @@ public class SearchMenuValidator implements Validator {
 		SearchMenu mnu = (SearchMenu) cls;
 
 		// Validations for Empty inputs -Start
-		// ValidationUtils.rejectIfEmpty(err, "location",
-		// "search.location.empty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "location",
 				"search.location.empty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "checkIn",
@@ -42,9 +47,12 @@ public class SearchMenuValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "noOfRooms",
 				"search.noOfRooms");
 		// Validations for Empty inputs -End
-		Integer noOfRooms = mnu.getNoOfRooms();
+		Integer noOfRooms = 0;
+		noOfRooms = mnu.getNoOfRooms();
 		Date checkIn = mnu.getCheckIn();
+
 		Date checkOut = mnu.getCheckOut();
+<<<<<<< HEAD
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		java.util.Date date = new java.util.Date();
 		// System.out.println("Current Date : " + dateFormat.format(date));
@@ -54,6 +62,10 @@ public class SearchMenuValidator implements Validator {
 			}
 		}
 		
+=======
+		System.out.println(checkOut);
+		System.out.println(checkIn);
+>>>>>>> origin/sckbranch
 
 		// VALIDATIONS FOR CHECKIN AND CHECKOUTS
 		if (checkIn != null && checkOut != null) {
@@ -65,6 +77,16 @@ public class SearchMenuValidator implements Validator {
 			err.rejectValue("noOfRooms", "search.noOfRooms.lessThenOne");
 		}
 
+<<<<<<< HEAD
+=======
+		if (checkOut != null && checkIn != null) {
+			if (checkOut.before(checkIn)) {
+				err.rejectValue("checkOut", "search.checkOut.beforeCheckIn");
+			}
+
+		}
+
+>>>>>>> origin/sckbranch
 	}
 
 }

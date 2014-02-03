@@ -5,21 +5,19 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
+<<<<<<< HEAD
 /*import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;*/
+=======
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+>>>>>>> origin/sckbranch
 
 public class SearchMenu {
-	/*@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	    binder.registerCustomEditor(Date.class, new CustomDateEditor(
-	            dateFormat, false));
-	}*/
 	private String location;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date checkIn;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date checkOut;
+<<<<<<< HEAD
 	private int noOfRooms;
 	private List<String> currency;
 
@@ -30,6 +28,11 @@ public class SearchMenu {
 	public void setCurrency(List<String> currency) {
 		this.currency = currency;
 	}
+=======
+
+	@NumberFormat(style = Style.NUMBER)
+	private Integer noOfRooms;
+>>>>>>> origin/sckbranch
 
 	public String getLocation() {
 		return location;
@@ -55,11 +58,11 @@ public class SearchMenu {
 		this.checkOut = checkOut;
 	}
 
-	public int getNoOfRooms() {
+	public Integer getNoOfRooms() {
 		return noOfRooms;
 	}
 
-	public void setNoOfRooms(int noOfRooms) {
+	public void setNoOfRooms(Integer noOfRooms) {
 		this.noOfRooms = noOfRooms;
 	}
 
@@ -68,7 +71,11 @@ public class SearchMenu {
 	}
 
 	public SearchMenu(String location, Date checkIn, Date checkOut,
+<<<<<<< HEAD
 			int noOfRooms,List<String> currency) {
+=======
+			Integer noOfRooms) {
+>>>>>>> origin/sckbranch
 		super();
 		this.location = location;
 		this.checkIn = checkIn;
@@ -79,8 +86,14 @@ public class SearchMenu {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		
 		return "location="+location+",checkIn="+checkIn+",checkOut="+checkOut+"Number of Rooms="+noOfRooms+"Currency"+currency;
+=======
+
+		return "location=" + location + ",checkIn=" + checkIn + ",checkOut="
+				+ checkOut + "Number of Rooms=" + noOfRooms;
+>>>>>>> origin/sckbranch
 	}
 	
 

@@ -21,14 +21,14 @@
 		<tr>
 			<td><form:label path="checkIn">
 					<spring:message code="label.checkIn" />
-				</form:label></td>
+				</form:label>(dd-MMM-yyyy)</td>
 			<td><form:input path="checkIn" /></td>
 			<td><form:errors path="checkIn" cssClass="error" />
 		</tr>
 		<tr>
 			<td><form:label path="checkOut">
 					<spring:message code="label.checkOut" />
-				</form:label></td>
+				</form:label>(dd-MMM-yyyy)</td>
 			<td><form:input path="checkOut" /></td>
 			<td><form:errors path="checkOut" cssClass="error" />
 		</tr>
