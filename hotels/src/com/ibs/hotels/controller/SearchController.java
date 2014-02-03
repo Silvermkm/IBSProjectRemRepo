@@ -37,7 +37,7 @@ import com.ibs.hotels.service.SearchService;
 @Controller
 public class SearchController {
 	protected static Logger logger = Logger.getLogger("controller");
-
+// Added some new line in the SearchController class by Tapanesh .
 	@Autowired
 	private SearchMenuValidator searchValidator;
 
