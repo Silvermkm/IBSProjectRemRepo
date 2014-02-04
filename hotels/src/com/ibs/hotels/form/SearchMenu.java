@@ -1,8 +1,12 @@
 package com.ibs.hotels.form;
 
+//import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
+/*import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;*/
 
 public class SearchMenu {
 	/*@InitBinder
@@ -17,6 +21,15 @@ public class SearchMenu {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date checkOut;
 	private int noOfRooms;
+	private List<String> currency;
+
+	public List<String> getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(List<String> currency) {
+		this.currency = currency;
+	}
 
 	public String getLocation() {
 		return location;
@@ -55,18 +68,20 @@ public class SearchMenu {
 	}
 
 	public SearchMenu(String location, Date checkIn, Date checkOut,
-			int noOfRooms) {
+			int noOfRooms,List<String> currency) {
 		super();
 		this.location = location;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		this.noOfRooms = noOfRooms;
+		this.currency=currency;
 	}
 
 	@Override
 	public String toString() {
 		
-		return "location="+location+",checkIn="+checkIn+",checkOut="+checkOut+"Number of Rooms="+noOfRooms;
+		return "location="+location+",checkIn="+checkIn+",checkOut="+checkOut+"Number of Rooms="+noOfRooms+"Currency"+currency;
 	}
+	
 
 }

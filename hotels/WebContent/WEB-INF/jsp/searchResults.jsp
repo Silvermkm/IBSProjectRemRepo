@@ -27,6 +27,7 @@
 						<td>${hotel.roomRent}</td>
 					</tr>
 				</c:forEach>
+				
 			</table>
 		</c:if>
 

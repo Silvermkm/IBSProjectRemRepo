@@ -33,7 +33,17 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-jsp-2.2.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-servlet-2.2.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-template-2.2.1.jar"/>
-	<classpathentry kind="lib" path="/home/nsugunan/tomcat6/lib/jsp-api.jar"/>
-	<classpathentry kind="lib" path="/home/nsugunan/tomcat6/lib/servlet-api.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.context-sources-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="/usr/local/tomcat6/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/usr/local/tomcat6/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/com.springsource.javax.xml.ws-2.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.binding-2.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.binding-2.3.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-binding-2.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webflow-2.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-js-2.3.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.context-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cldc-1.1-java5.0.jar"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

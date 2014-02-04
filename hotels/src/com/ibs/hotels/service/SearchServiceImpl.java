@@ -22,10 +22,10 @@ public class SearchServiceImpl implements SearchService{
 		this.searchDAO = searchDAO;
 	}
 
-	public List<Hotel> listHotels(String location,Date checkIn,Date checkOut, int noOfRoom ){
+	public List<Hotel> listHotels(String location,Date checkIn,Date checkOut, int noOfRoom,List<String> currency ){
 		
 		
-		return  searchDAO.listHotels(location,checkIn,checkOut,noOfRoom );
+		return  searchDAO.listHotels(location,checkIn,checkOut,noOfRoom,currency);
 		
 	}
 
