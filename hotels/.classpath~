@@ -33,26 +33,29 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-jsp-2.2.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-servlet-2.2.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles-template-2.2.1.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.context-sources-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="lib" path="/usr/local/tomcat6/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="/usr/local/tomcat6/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/com.springsource.javax.xml.ws-2.1.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.binding-2.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.binding-2.3.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-binding-2.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webflow-2.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-js-2.3.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.context-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cldc-1.1-java5.0.jar"/>
+=======
+	<classpathentry kind="lib" path="/home/nsugunan/tomcat6/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/home/nsugunan/tomcat6/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-4.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.oxm-3.0.1.RELEASE-A.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.context.support-3.0.1.RELEASE-A.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-asl-1.8.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-mapper-asl-1.9.0.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.springframework.web.servlet-3.1.0.M2.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webflow-2.3.2.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+>>>>>>> origin/sckbranch
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

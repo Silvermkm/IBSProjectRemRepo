@@ -4,23 +4,19 @@ package com.ibs.hotels.form;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
-/*import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;*/
+//import org.springframework.format.annotation.DateTimeFormat;
+
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+
 
 public class SearchMenu {
-	/*@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	    binder.registerCustomEditor(Date.class, new CustomDateEditor(
-	            dateFormat, false));
-	}*/
 	private String location;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date checkIn;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date checkOut;
-	private int noOfRooms;
+
+	@NumberFormat(style = Style.NUMBER)
+	private Integer noOfRooms;
 	private List<String> currency;
 
 	public List<String> getCurrency() {
@@ -55,11 +51,11 @@ public class SearchMenu {
 		this.checkOut = checkOut;
 	}
 
-	public int getNoOfRooms() {
+	public Integer getNoOfRooms() {
 		return noOfRooms;
 	}
 
-	public void setNoOfRooms(int noOfRooms) {
+	public void setNoOfRooms(Integer noOfRooms) {
 		this.noOfRooms = noOfRooms;
 	}
 
@@ -67,8 +63,8 @@ public class SearchMenu {
 		super();
 	}
 
-	public SearchMenu(String location, Date checkIn, Date checkOut,
-			int noOfRooms,List<String> currency) {
+	public SearchMenu(String location, Date checkIn, Date checkOut,Integer noOfRooms,List<String> currency) {
+
 		super();
 		this.location = location;
 		this.checkIn = checkIn;
@@ -79,8 +75,10 @@ public class SearchMenu {
 
 	@Override
 	public String toString() {
+
 		
 		return "location="+location+",checkIn="+checkIn+",checkOut="+checkOut+"Number of Rooms="+noOfRooms+"Currency"+currency;
+
 	}
 	
 

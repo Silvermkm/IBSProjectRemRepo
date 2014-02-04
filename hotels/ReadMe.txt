@@ -1,0 +1,1 @@
+http://api.ean.com/ean-services/rs/hotel/v3/list?apiKey=3n2ek8y77sgyx7ur7zwk79fm&arrivalDate=03/22/2014&departureDate=03/24/2014&room1=1,5,12&city=Chicago&numberOfResults=2

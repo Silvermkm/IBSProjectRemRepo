@@ -13,6 +13,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -34,12 +36,17 @@ public class SearchController {
 	@Autowired
 	private SearchMenuValidator searchValidator;
 
+	private ConversionService conversionService;
+
+	/* private FormattingConversionServiceFactoryBean conversionService; */
+
 	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
-		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+	private void initBinder(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(
+				dateFormat, true));
 		binder.setValidator(searchValidator);
+		binder.setConversionService(conversionService);
 	}
 
 	@Autowired
@@ -66,9 +73,10 @@ public class SearchController {
 
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
 	public ModelAndView listHotels(
-			@ModelAttribute("newSearch") @Valid SearchMenu srch,
+			@ModelAttribute("newSearch") SearchMenu srch,
+			/* @ModelAttribute("newSearch") @Valid SearchMenu srch, */
 			BindingResult result) {
-
+		searchValidator.validate(srch, result);
 		if (result.hasErrors()) {
 			return new ModelAndView("searchHome", "newSearch", srch);
 		} else {
@@ -78,7 +86,6 @@ public class SearchController {
 			htlLst = searchService.listHotels(srch.getLocation(),
 					srch.getCheckIn(), srch.getCheckOut(), srch.getNoOfRooms(),
 					srch.getCurrency());
-
 			map.put("newSearch", srch);
 			map.put("hotelList", htlLst);
 			map.put("currencies", srch.getCurrency());
@@ -87,6 +94,7 @@ public class SearchController {
 		}
 	}
 
+	@Valid
 	public void setSearchService(SearchService searchService) {
 		this.searchService = searchService;
 	}

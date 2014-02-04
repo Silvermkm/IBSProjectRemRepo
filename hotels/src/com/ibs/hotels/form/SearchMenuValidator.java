@@ -1,9 +1,9 @@
-package com.ibs.hotels.form;
+  package com.ibs.hotels.form;
 
 //import java.text.SimpleDateFormat;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+/*import java.text.DateFormat;
+import java.text.SimpleDateFormat;*/
+//import java.util.Calendar;
 import java.util.Date;
 
 //import javax.xml.ws.handler.MessageContext;
@@ -14,15 +14,18 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+
 /*import org.springframework.binding.message.MessageBuilder;
  import org.springframework.binding.validation.ValidationContext;*/
 
 //import com.sun.org.apache.xerces.internal.impl.dv.ValidationContext;
 @Component
+
 public class SearchMenuValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> cls) {
+
 		return SearchMenu.class.isAssignableFrom(cls);
 	}
 
@@ -31,8 +34,6 @@ public class SearchMenuValidator implements Validator {
 		SearchMenu mnu = (SearchMenu) cls;
 
 		// Validations for Empty inputs -Start
-		// ValidationUtils.rejectIfEmpty(err, "location",
-		// "search.location.empty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "location",
 				"search.location.empty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "checkIn",
@@ -42,10 +43,13 @@ public class SearchMenuValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(err, "noOfRooms",
 				"search.noOfRooms");
 		// Validations for Empty inputs -End
-		Integer noOfRooms = mnu.getNoOfRooms();
+		Integer noOfRooms = 0;
+		noOfRooms = mnu.getNoOfRooms();
 		Date checkIn = mnu.getCheckIn();
+
 		Date checkOut = mnu.getCheckOut();
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+		//DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
 		java.util.Date date = new java.util.Date();
 		// System.out.println("Current Date : " + dateFormat.format(date));
 		if (checkIn != null && checkOut != null) {
@@ -55,15 +59,24 @@ public class SearchMenuValidator implements Validator {
 		}
 		
 
+
 		// VALIDATIONS FOR CHECKIN AND CHECKOUTS
-		if (checkIn != null && checkOut != null) {
+	/*	if (checkIn != null && checkOut != null) {
 			if (checkOut.before(checkIn)) {
 				err.rejectValue("checkOut", "search.checkOut.greater");
 			}
-		}
+		}*/
 		if (noOfRooms != null && noOfRooms < 1) {
 			err.rejectValue("noOfRooms", "search.noOfRooms.lessThenOne");
 		}
+
+		if (checkOut != null && checkIn != null) {
+			if (checkOut.before(checkIn)) {
+				err.rejectValue("checkOut", "search.checkOut.beforeCheckIn");
+			}
+
+		}
+
 
 	}
 
